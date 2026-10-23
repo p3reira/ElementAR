@@ -1,0 +1,36 @@
+body { margin: 0; overflow: hidden; font-family: system-ui, sans-serif; }
+
+#painel {
+  position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 10;
+  max-width: 520px; margin: 0 auto;
+  background: rgba(18, 18, 24, 0.88); color: #fff;
+  border-radius: 16px; padding: 14px 16px;
+  border-left: 6px solid var(--cor, #888);
+  backdrop-filter: blur(6px);
+  transform: translateY(130%); transition: transform .3s ease;
+}
+#painel.visivel { transform: translateY(0); }
+
+.topo { display: flex; align-items: center; gap: 12px; }
+.simbolo {
+  width: 56px; height: 56px; border-radius: 10px; flex-shrink: 0;
+  background: var(--cor, #888); color: #fff;
+  display: grid; place-items: center; font-size: 26px; font-weight: 700;
+}
+.nome { font-size: 20px; font-weight: 700; }
+.familia { font-size: 13px; opacity: .8; }
+.dados {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+  margin: 12px 0 8px; font-size: 12px;
+}
+.dados div { background: rgba(255,255,255,.08); border-radius: 8px; padding: 6px 8px; }
+.dados b { display: block; font-size: 14px; }
+.descricao { font-size: 14px; line-height: 1.45; margin: 0; }
+.aviso { font-size: 11px; opacity: .6; margin-top: 6px; }
+
+#dica {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 10;
+  background: rgba(0,0,0,.6); color: #fff; padding: 8px 14px; border-radius: 999px;
+  font-size: 14px; transition: opacity .3s;
+}
+#dica.oculta { opacity: 0; }

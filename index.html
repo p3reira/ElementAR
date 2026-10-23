@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ElementAR — Tabela Periódica AR</title>
+  <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="./assets/icons/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <link rel="stylesheet" href="./css/estilo.css" />
+</head>
+<body>
+  <div id="dica">Aponte a câmera para um card</div>
+
+  <div id="painel">
+    <div class="topo">
+      <div class="simbolo" id="p-simbolo"></div>
+      <div>
+        <div class="nome" id="p-nome"></div>
+        <div class="familia" id="p-familia"></div>
+      </div>
+    </div>
+    <div class="dados">
+      <div>Nº atômico<b id="p-numero"></b></div>
+      <div>Massa<b id="p-massa"></b></div>
+      <div>Fase<b id="p-fase"></b></div>
+      <div>Grupo<b id="p-grupo"></b></div>
+      <div>Período<b id="p-periodo"></b></div>
+      <div>Camadas<b id="p-camadas"></b></div>
+    </div>
+    <p class="descricao" id="p-descricao"></p>
+    <div class="aviso" id="p-aviso"></div>
+  </div>
+
+  <a-scene id="cena"
+           mindar-image="imageTargetSrc: ./targets/targets.mind; maxTrack: 1; uiScanning: no;"
+           color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights"
+           vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    <a-light type="ambient" intensity="1"></a-light>
+    <a-light type="directional" intensity="0.8" position="1 2 2"></a-light>
+  </a-scene>
+
+  <script src="./elementos.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
